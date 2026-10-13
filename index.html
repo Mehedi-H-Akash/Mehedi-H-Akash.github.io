@@ -201,6 +201,9 @@ main h2::before{-webkit-text-fill-color:var(--ink)}
 .up{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#fff;font-size:1.3rem;background:var(--g);box-shadow:0 10px 24px rgba(80,70,220,.4);opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .3s,transform .3s}
 .up.on{opacity:1;transform:none;pointer-events:auto}
 @media (max-width:780px){.c1{left:-6%}.c2{left:-8%}}
+/* pictures inside posts */
+.pb img{display:block;max-width:100%;height:auto;margin:6px 0 16px;border-radius:16px;border:1px solid var(--line);box-shadow:0 10px 26px rgba(70,60,150,.14)}
+.pb p:has(>img){max-width:none}
 </style>
 </head>
 <body>
