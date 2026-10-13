@@ -102,18 +102,71 @@ ul.pl{margin:0;padding-left:20px;color:var(--muted)}ul.pl li{margin-bottom:6px}
 footer{margin-top:60px;padding:26px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
 @media (max-width:780px){.hero .wrap,.two{grid-template-columns:1fr}.photo{order:-1;width:min(230px,60vw)}.hero .wrap.stats{grid-template-columns:1fr 1fr}.b-alt{margin:10px 0 0}nav a{padding:6px 7px;font-size:.82rem}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.in-a,.rv{opacity:1;transform:none}}
+
+:root{--panel:rgba(255,255,255,.72)}
+@media (prefers-color-scheme:dark){:root{--panel:rgba(21,27,59,.62)}}
+body{background:radial-gradient(900px 500px at 10% 30%,rgba(109,74,255,.09),transparent 60%),radial-gradient(800px 500px at 95% 70%,rgba(18,181,214,.09),transparent 60%),var(--bg)}
+.tags{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.tag2{background:linear-gradient(120deg,rgba(255,159,67,.28),rgba(255,111,145,.28));border-color:rgba(255,159,67,.55);font-weight:700}
+main section{position:relative;margin:34px 0;padding:46px 38px 26px;border-radius:30px;background:var(--panel);border:1px solid var(--line);overflow:hidden;--acc:var(--v);box-shadow:0 18px 44px rgba(70,60,150,.08)}
+main section::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;right:-110px;top:-130px;background:var(--acc);opacity:.16;filter:blur(46px);pointer-events:none}
+main section>*{position:relative}
+#career{--acc:var(--c)}#buyers{--acc:#ff8a4c}#education{--acc:#18b57a}#posts{--acc:#f0568a}
+#contact{background:none;border:0;box-shadow:none;padding:0}#contact::before{display:none}
+main h2{font-size:clamp(1.9rem,4vw,2.6rem)}
+main h2::after{width:90px;height:5px;background:linear-gradient(90deg,var(--acc),transparent)}
+.card{box-shadow:0 8px 22px rgba(70,60,150,.08)}
+.card:hover,.post:hover,.post.open{border-color:var(--acc)}
+.tl li::before{border-color:var(--acc)}.when{color:var(--acc)}
+.chip{background:color-mix(in srgb,var(--acc) 15%,transparent);color:var(--ink)}
+.core .card::before{content:"\1F4AC";display:grid;place-items:center;width:46px;height:46px;border-radius:14px;margin-bottom:12px;font-size:1.3rem;background:linear-gradient(135deg,rgba(109,74,255,.2),rgba(18,181,214,.2))}
+.core .card:nth-child(2)::before{content:"\1F9F5"}.core .card:nth-child(3)::before{content:"\1F4B0"}.core .card:nth-child(4)::before{content:"\1F4CB"}.core .card:nth-child(5)::before{content:"\1F3ED"}.core .card:nth-child(6)::before{content:"\1F4C8"}
+.buyers{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.buyer{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 12px 18px;text-align:center;min-height:152px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.buyer:hover{transform:translateY(-7px) rotate(-1deg);box-shadow:0 18px 34px rgba(255,138,76,.22);border-color:var(--acc)}
+.buyer i{display:grid;place-items:center;width:54px;height:54px;margin:0 auto 12px;border-radius:50%;font-style:normal;font-family:var(--head);font-weight:800;font-size:1.35rem;color:#fff;background:linear-gradient(135deg,#6d4aff,#12b5d6)}
+.buyer:nth-child(3n+2) i{background:linear-gradient(135deg,#ff9f43,#ff6f91)}.buyer:nth-child(3n) i{background:linear-gradient(135deg,#18b57a,#12b5d6)}
+.buyer b{display:block;font-family:var(--head);font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase}
+.buyer small{display:block;color:var(--muted);font-size:.8rem;margin-top:2px}
+@media (max-width:780px){main section{padding:32px 18px 14px;border-radius:22px;margin:22px 0}.buyers{grid-template-columns:1fr 1fr}}
+
+html{scroll-padding-top:86px}
+.ic,.mb{display:none}
+nav{padding:5px;border-radius:99px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px)}
+header.s nav{background:var(--card);border-color:var(--line)}
+nav a{font-weight:600;font-size:.92rem;padding:8px 14px}
+@media (max-width:780px){
+header nav,header.s nav{position:fixed;left:12px;right:12px;top:calc(env(safe-area-inset-top,0px) + 70px);display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px;border-radius:26px;background:var(--card);border:1px solid var(--line);backdrop-filter:none;box-shadow:0 26px 60px rgba(30,20,100,.35);opacity:0;visibility:hidden;transform:translateY(-14px) scale(.98);transition:opacity .3s,transform .3s,visibility .3s}
+header.o nav{opacity:1;visibility:visible;transform:none}
+nav a,header.s nav a{display:flex;align-items:center;gap:10px;padding:14px;border-radius:18px;font-size:1.02rem;font-weight:700;color:var(--ink);background:color-mix(in srgb,var(--v) 10%,transparent)}
+nav a .ic{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;font-size:1.1rem;background:var(--g)}
+.mb{display:grid;place-content:center;gap:5px;width:48px;height:48px;border-radius:16px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.14);cursor:pointer;padding:0}
+.mb span{display:block;width:22px;height:2.5px;border-radius:2px;background:#fff;transition:transform .3s,opacity .3s,background .3s}
+header.s .mb,header.o .mb{border-color:var(--line);background:var(--card)}
+header.s .mb span,header.o .mb span{background:var(--ink)}
+header.o .mb span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+header.o .mb span:nth-child(2){opacity:0}
+header.o .mb span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+header.o{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px)}
+header.o .logo{color:var(--ink)}
+}
+header nav a.on,header.s nav a.on,header nav a:hover,header.s nav a:hover{background:var(--g);color:#fff}
+header nav a.on .ic{background:rgba(255,255,255,.25)}
+header nav a.cta,header.s nav a.cta{background:linear-gradient(120deg,#ff9f43,#ff6f91);color:#2a1200;font-weight:800;box-shadow:0 6px 16px rgba(255,130,90,.35)}
+@media (max-width:780px){header nav a.cta,header.s nav a.cta{grid-column:1/-1;justify-content:center}}
 </style>
 </head>
 <body>
 <div id="bar"></div>
 <header id="hd"><div class="wrap"><a class="logo" href="#top">M. H. Akash</a>
-<nav aria-label="Main"><a href="#about">About</a><a href="#career">Career</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#posts">Posts</a><a href="#contact">Contact</a></nav></div></header>
+<button class="mb" id="mb" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav id="nav" aria-label="Main"><a href="#about"><span class="ic">👤</span>About</a><a href="#career"><span class="ic">🚀</span>Career</a><a href="#buyers"><span class="ic">🤝</span>Buyers</a><a href="#skills"><span class="ic">⚡</span>Skills</a><a href="#education"><span class="ic">🎓</span>Education</a><a href="#posts"><span class="ic">✍️</span>Posts</a><a class="cta" href="#contact"><span class="ic">✉️</span>Contact</a></nav></div></header>
 
 <main id="top">
 <div class="hero"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i>
 <div class="wrap">
 <div>
-<span class="tag in-a" style="animation-delay:.05s">B.Sc. in Textile Engineering</span>
+<div class="tags in-a" style="animation-delay:.05s"><span class="tag">B.Sc. in Textile Engineering, BUFT</span><span class="tag tag2">Merchandising Professional</span></div>
 <h1 class="in-a" style="animation-delay:.2s">Md. Mehedi Hasan <span>Akash</span></h1>
 <p class="in in-a" style="animation-delay:.35s">Merchandising professional turning garment ideas into on-time, on-target orders, with buyers like Benetton, NEXT, Disney, and Gemo behind me.</p>
 <div class="in-a" style="animation-delay:.5s"><a class="btn b-main" href="#career">See my journey</a><a class="btn b-alt" href="#contact">Contact me</a></div>
@@ -122,7 +175,7 @@ footer{margin-top:60px;padding:26px 0;border-top:1px solid var(--line);color:var
 </div>
 <div class="wrap stats">
 <div class="stat in-a" style="animation-delay:.6s"><b data-n="4" data-s="+">0</b><small>Years in merchandising</small></div>
-<div class="stat in-a" style="animation-delay:.7s"><b data-n="6">0</b><small>Buyers worked with</small></div>
+<div class="stat in-a" style="animation-delay:.7s"><b data-n="9">0</b><small>Buyers worked with</small></div>
 <div class="stat in-a" style="animation-delay:.8s"><b data-n="4">0</b><small>Companies</small></div>
 <div class="stat in-a" style="animation-delay:.9s"><b data-n="3.84" data-d="2">0</b><small>CGPA out of 4.00</small></div>
 </div></div>
@@ -141,6 +194,8 @@ footer{margin-top:60px;padding:26px 0;border-top:1px solid var(--line);color:var
 <li class="rv"><div class="when">Dec 2023 to Nov 2025</div><h3>Assistant Merchandiser</h3><div class="org">Epyllion Group</div><div class="chips"><span class="chip">NEXT (Vogue Sourcing)</span><span class="chip">RAW</span></div></li>
 <li class="rv"><div class="when">Sept 2022 to Nov 2023</div><h3>Junior Merchandiser</h3><div class="org">Fashion Tex</div><div class="chips"><span class="chip">Disney (Licensed Product)</span><span class="chip">Gemo</span></div></li>
 </ol></section>
+
+<section id="buyers"><h2 class="rv">Buyers worked with</h2><p class="lead rv">Brands and buyers I have worked with across my career.</p><div class="buyers"><div class="buyer rv"><i>B</i><b>Benetton</b></div><div class="buyer rv"><i>S</i><b>Sorbino</b></div><div class="buyer rv"><i>N</i><b>NEXT</b><small>Vogue Sourcing</small></div><div class="buyer rv"><i>R</i><b>RAW</b></div><div class="buyer rv"><i>D</i><b>Disney</b><small>Licensed product</small></div><div class="buyer rv"><i>G</i><b>Gemo</b></div><div class="buyer rv"><i>T</i><b>TOPTEN</b></div><div class="buyer rv"><i>P</i><b>POLHAM</b></div><div class="buyer rv"><i>A</i><b>ALASKA</b></div></div></section>
 
 <section id="skills"><h2 class="rv">What I do</h2><p class="lead rv">Core functions I handle every day.</p>
 <div class="core">
@@ -182,7 +237,7 @@ footer{margin-top:60px;padding:26px 0;border-top:1px solid var(--line);color:var
 /* HOW TO ADD A POST: copy one block, paste it at the TOP of the list, change the
    date, title, summary and text (each string in "text" is one paragraph). Save and re-upload. */
 var POSTS=[
-{"date": "13 Oct 2026", "title": "From a Rural Village to Global Supply Chains: My Textile Journey", "summary": "How a boy from a rural village with little interest in textiles grew into a global textile professional.", "text": ["Growing up as a boy in a rural village, the intricate world of global apparel supply chains felt lightyears away. I was fortunate to have a strong, merit-based educational background, but to be completely honest, I initially had very little interest in the textile sector. It simply wasn't on my radar.", "But life has a funny way of steering you toward your true calling.", "Slowly, an unexpected curiosity began to take root. I became deeply fascinated by the sheer complexity and engineering of how garments are made. I wanted to understand the entire lifecycle—how a raw, simple fiber is spun, dyed, cut, and transformed into a finished product worn by someone halfway across the world. Driven by this keen desire to learn, and bolstered by my academic foundations—which eventually led me through my Knitwear Industry Management studies at BRAC University—I fully committed myself to this dynamic industry.", "My professional journey was forged in the fast-paced environments of some of the top-tier organizations in Bangladesh. Working with industry giants like <strong>Epyllion Group</strong> and <strong>Masco Group</strong> provided a tremendous learning curve. Those early years were a mixture of everything: immense pressure, incredible teamwork, long hours, and invaluable hands-on experience. Those factory floors taught me the granular realities of apparel manufacturing and the resilience required to thrive in it.", "Today, that journey has brought me to a proud new chapter as a Merchandiser at <strong>SSTS BD</strong>, a multinational liaison office. In this role, I get to bridge the gap between global buyers and local execution, applying every lesson I've learned from the ground up to ensure flawless product delivery.", "Looking back, the feeling is entirely mutual: I have given my dedication and hard work to the RMG sector, and in return, it has transformed a rural boy into a global textile professional. It has been a tremendous ride so far, and the passion that started as a small spark continues to drive me forward every single day."]}
+{"date": "13 Oct 2026", "title": "From a Rural Village to Global Supply Chains: My Textile Journey", "summary": "How a boy from a rural village with little interest in textiles grew into a global textile professional.", "text": ["Growing up as a boy in a rural village, the intricate world of global apparel supply chains felt lightyears away. I was fortunate to have a strong, merit-based educational background, but to be completely honest, I initially had very little interest in the textile sector. It simply wasn't on my radar.", "But life has a funny way of steering you toward your true calling.", "Slowly, an unexpected curiosity began to take root. I became deeply fascinated by the sheer complexity and engineering of how garments are made. I wanted to understand the entire lifecycle—how a raw, simple fiber is spun, dyed, cut, and transformed into a finished product worn by someone halfway across the world. Driven by this keen desire to learn, and bolstered by my academic foundations—which eventually led me through my Knitwear Industry Management studies at BUFT—I fully committed myself to this dynamic industry.", "My professional journey was forged in the fast-paced environments of some of the top-tier organizations in Bangladesh. Working with industry giants like <strong>Epyllion Group</strong> and <strong>Masco Group</strong> provided a tremendous learning curve. Those early years were a mixture of everything: immense pressure, incredible teamwork, long hours, and invaluable hands-on experience. Those factory floors taught me the granular realities of apparel manufacturing and the resilience required to thrive in it.", "Today, that journey has brought me to a proud new chapter as a Merchandiser at <strong>SSTS BD</strong>, a multinational liaison office. In this role, I get to bridge the gap between global buyers and local execution, applying every lesson I've learned from the ground up to ensure flawless product delivery.", "Looking back, the feeling is entirely mutual: I have given my dedication and hard work to the RMG sector, and in return, it has transformed a rural boy into a global textile professional. It has been a tremendous ride so far, and the passion that started as a small spark continues to drive me forward every single day."]}
 ];
 var L=document.getElementById("postList");
 if(!POSTS.length)L.innerHTML='<p class="lead">No posts yet. Check back soon.</p>';
@@ -209,6 +264,11 @@ var r=tl.getBoundingClientRect();fill.style.height=Math.max(0,Math.min(r.height,
 var cur="";document.querySelectorAll("main section").forEach(function(s){if(s.getBoundingClientRect().top<innerHeight*.4)cur=s.id});
 links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+cur)})}
 addEventListener("scroll",onS,{passive:true});onS();
+var mb=document.getElementById("mb");
+function closeM(){hd.classList.remove("o");mb.setAttribute("aria-expanded","false")}
+mb.addEventListener("click",function(){var o=hd.classList.toggle("o");mb.setAttribute("aria-expanded",o)});
+links.forEach(function(a){a.addEventListener("click",closeM)});
+addEventListener("keydown",function(e){if(e.key==="Escape")closeM()});
 </script>
 </body>
 </html>
