@@ -48,7 +48,7 @@ h1 span{background:linear-gradient(120deg,#9b86ff,#4fe0ff,#ffc078);-webkit-backg
 .photo::before{content:"";position:absolute;inset:-8px;border-radius:50%;background:conic-gradient(#6d4aff,#12b5d6,#ff9f43,#6d4aff);animation:spin 9s linear infinite}
 .photo img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:50%;border:6px solid #0b1030;display:block}
 @keyframes spin{to{transform:rotate(1turn)}}
-.stats{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:54px}
+.hero .wrap.stats{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:54px}
 .stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px;text-align:center;backdrop-filter:blur(6px)}
 .stat b{display:block;font-family:var(--head);font-size:2rem;line-height:1.1}
 .stat small{color:#b9c0e6}
@@ -100,7 +100,7 @@ ul.pl{margin:0;padding-left:20px;color:var(--muted)}ul.pl li{margin-bottom:6px}
 .contact{background:linear-gradient(135deg,#1b1470,#0b6f8a);color:#fff;border-radius:22px;padding:34px;display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:center}
 .contact h3{font-family:var(--head);font-size:1.6rem;margin:0 0 4px}.contact p{margin:0;color:#d4dcf8}
 footer{margin-top:60px;padding:26px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
-@media (max-width:780px){.hero .wrap,.two{grid-template-columns:1fr}.photo{order:-1;width:min(230px,60vw)}.stats{grid-template-columns:1fr 1fr}.b-alt{margin:10px 0 0}nav a{padding:6px 7px;font-size:.82rem}}
+@media (max-width:780px){.hero .wrap,.two{grid-template-columns:1fr}.photo{order:-1;width:min(230px,60vw)}.hero .wrap.stats{grid-template-columns:1fr 1fr}.b-alt{margin:10px 0 0}nav a{padding:6px 7px;font-size:.82rem}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.in-a,.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -182,9 +182,7 @@ footer{margin-top:60px;padding:26px 0;border-top:1px solid var(--line);color:var
 /* HOW TO ADD A POST: copy one block, paste it at the TOP of the list, change the
    date, title, summary and text (each string in "text" is one paragraph). Save and re-upload. */
 var POSTS=[
-{date:"12 Oct 2026",title:"How I check a style cost against the target price",summary:"Sample post: replace this with your own writing.",text:["This is a sample post so you can see how posts look. Delete it or rewrite it.","A good post can be short. Pick one thing you learned this week, explain it simply, and end with one tip a reader can use."]},
-{date:"05 Oct 2026",title:"Five things I check before sending a sample",summary:"Sample post: replace this with your own writing.",text:["Another sample post. Write about checks, mistakes you have seen, or habits that save time.","Keep paragraphs short so they are easy to read on a phone."]},
-{date:"28 Sep 2026",title:"Starting a new role as a merchandiser",summary:"Sample post: replace this with your own writing.",text:["You could write about joining SSTS BD Liaison Office, what you are learning, and what you hope to achieve.","Personal posts like this help people get to know you."]}
+{"date": "13 Oct 2026", "title": "From a Rural Village to Global Supply Chains: My Textile Journey", "summary": "How a boy from a rural village with little interest in textiles grew into a global textile professional.", "text": ["Growing up as a boy in a rural village, the intricate world of global apparel supply chains felt lightyears away. I was fortunate to have a strong, merit-based educational background, but to be completely honest, I initially had very little interest in the textile sector. It simply wasn't on my radar.", "But life has a funny way of steering you toward your true calling.", "Slowly, an unexpected curiosity began to take root. I became deeply fascinated by the sheer complexity and engineering of how garments are made. I wanted to understand the entire lifecycle—how a raw, simple fiber is spun, dyed, cut, and transformed into a finished product worn by someone halfway across the world. Driven by this keen desire to learn, and bolstered by my academic foundations—which eventually led me through my Knitwear Industry Management studies at BRAC University—I fully committed myself to this dynamic industry.", "My professional journey was forged in the fast-paced environments of some of the top-tier organizations in Bangladesh. Working with industry giants like <strong>Epyllion Group</strong> and <strong>Masco Group</strong> provided a tremendous learning curve. Those early years were a mixture of everything: immense pressure, incredible teamwork, long hours, and invaluable hands-on experience. Those factory floors taught me the granular realities of apparel manufacturing and the resilience required to thrive in it.", "Today, that journey has brought me to a proud new chapter as a Merchandiser at <strong>SSTS BD</strong>, a multinational liaison office. In this role, I get to bridge the gap between global buyers and local execution, applying every lesson I've learned from the ground up to ensure flawless product delivery.", "Looking back, the feeling is entirely mutual: I have given my dedication and hard work to the RMG sector, and in return, it has transformed a rural boy into a global textile professional. It has been a tremendous ride so far, and the passion that started as a small spark continues to drive me forward every single day."]}
 ];
 var L=document.getElementById("postList");
 if(!POSTS.length)L.innerHTML='<p class="lead">No posts yet. Check back soon.</p>';
